@@ -1,4 +1,5 @@
 from tkinter import *
+import script4.py
 
 window = Tk()
 
