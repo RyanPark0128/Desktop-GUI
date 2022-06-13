@@ -58,5 +58,5 @@ def update(id, title, author, year, isbn):
 
 
 connect()
-insert('asdasd', 'sadasd', 1999, 12321323)
-view()
+# insert('asdasd', 'sadasd', 1999, 12321323)
+# view()
