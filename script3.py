@@ -1,5 +1,7 @@
 from tkinter import *
-import script4
+from script4 import Database
+
+database = Database()
 
 
 def get_selected_row(event):
@@ -21,32 +23,32 @@ def get_selected_row(event):
 
 def view_command():
     list1.delete(0, END)
-    for row in script4.view():
+    for row in database.view():
         list1.insert(END, row)
 
 
 def search_command():
     list1.delete(0, END)
-    for row in script4.search(title_text.get(), author_text.get(), year_text.get(), isbn_text.get()):
+    for row in database.search(title_text.get(), author_text.get(), year_text.get(), isbn_text.get()):
         list1.insert(END, row)
 
 
 def add_command():
-    script4.insert(title_text.get(), author_text.get(),
-                   year_text.get(), isbn_text.get())
+    database.insert(title_text.get(), author_text.get(),
+                    year_text.get(), isbn_text.get())
     list1.delete(0, END)
     list1.insert(END, (title_text.get(), author_text.get(),
                        year_text.get(), isbn_text.get()))
 
 
 def delete_command():
-    script4.delete(selected_tuple[0])
+    database.delete(selected_tuple[0])
     view_command()
 
 
 def update_command():
-    script4.update(selected_tuple[0], title_text.get(), author_text.get(),
-                   year_text.get(), isbn_text.get())
+    database.update(selected_tuple[0], title_text.get(), author_text.get(),
+                    year_text.get(), isbn_text.get())
     view_command()
 
 
