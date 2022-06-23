@@ -25,11 +25,7 @@ class Checking(Account):
         self.balance = self.balance-amount - self.fee
 
 
-# account = Account("balance.txt")
-# account.withdraw(100)
-# print(account.balance)
-# account.commit()
-
 checking = Checking("balance.txt", 1)
 checking.transfer(110)
+checking.commit()
 print(checking.balance)
