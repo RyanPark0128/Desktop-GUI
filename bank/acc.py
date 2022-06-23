@@ -16,6 +16,9 @@ class Account:
 
 
 class Checking(Account):
+    """example sadsad"""
+
+    type = "checking"
 
     def __init__(self, filepath, fee):
         Account.__init__(self, filepath)
@@ -25,7 +28,9 @@ class Checking(Account):
         self.balance = self.balance-amount - self.fee
 
 
-checking = Checking("balance.txt", 1)
-checking.transfer(110)
-checking.commit()
-print(checking.balance)
+# checking = Checking("balance.txt", 1)
+# checking.transfer(110)
+# checking.commit()
+# print(checking.balance)
+
+print(Checking.__doc__)
